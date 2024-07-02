@@ -31,6 +31,8 @@ if [ $(git rev-parse HEAD) != $(git rev-parse @{u}) ]; then
 
     echo "Replacing currently running neard with new binary"
     # Move the binary and make it executable
+    mkdir -p $HOME/script/nearback
+    mv $NEARD_PATH/neard $HOME/script/nearback
     mv target/release/neard $NEARD_PATH
     chmod +x $NEARD_PATH
 
